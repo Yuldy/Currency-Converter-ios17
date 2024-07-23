@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     // Allow this property to change this view
-    @State var showExchangeInfo = false
+    @State var showExchangeInfo = false // checking the showExchangeInfo for the button
     @State var leftAmount = ""
     @State var rightAmount = ""
     
@@ -115,6 +115,9 @@ struct ContentView: View {
             }
             // Outlines the stack
             //.border(.blue)
+        }
+        .sheet(isPresented: $showExchangeInfo) {
+            ExchangeInfo() // when the $showExchangeInfo changes it would check the shset.
         }
     }
 }
